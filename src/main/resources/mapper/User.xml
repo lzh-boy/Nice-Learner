@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.learner.mapper.UserMapper">
+    <resultMap id="t_user" type="com.example.learner.bean.User">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="account" jdbcType="VARCHAR" property="account"/>
+        <result column="userName" jdbcType="VARCHAR" property="userName"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="salt" jdbcType="VARCHAR" property="salt"/>
+        <result column="iphone" jdbcType="VARCHAR" property="iphone"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="platform" jdbcType="VARCHAR" property="platform"/>
+        <result column="createdDate" jdbcType="VARCHAR" property="createdDate"/>
+        <result column="updatedDate" jdbcType="VARCHAR" property="updatedDate"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+
+        <result column="rid" jdbcType="INTEGER" property="rid"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,account,userName,password,salt,iphone,email,platform,createdDate,updatedDate,status,rid
+    </sql>
+
+    <select id="findAll" resultType="com.example.learner.bean.User">
+        select
+        <include refid="Base_Column_List" />
+        from t_user
+    </select>
+
+    <insert id="add" parameterType="com.example.learner.bean.User">
+        INSERT INTO t_user(account,userName,password,salt,iphone,email,platform,createdDate,updatedDate,status,rid) VALUES
+        (#{account},#{userName},#{password},#{salt},#{iphone},#{email},#{platform},#{createdDate},#{updatedDate},#{status},#{rid})
+    </insert>
+    <select id="findByName" parameterType="string" resultMap="t_user">
+        SELECT * FROM t_user WHERE userName = #{userName}
+    </select>
+</mapper>
