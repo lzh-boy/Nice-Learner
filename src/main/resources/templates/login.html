@@ -41,7 +41,7 @@
         sessionStorage.removeItem("nav-index"); // 页面或窗口关闭后才失效，用户登出不失效
     });
     function doLogin() {
-        $.post("/learner.me/users/login", $(".form").serialize(),function(data){
+        $.post("/learner.me/users/", $(".form").serialize(),function(data){
                 if (data.code == 0) {
                     location.href = "http://localhost:1000/learner.me/";
                 } else {

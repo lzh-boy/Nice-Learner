@@ -52,6 +52,8 @@ public class ShiroConfigure {
         filterChainDefinitionMap.put("/images/**", "anon"); // 静态资源匿名访问
         filterChainDefinitionMap.put("/semantic-ui/**", "anon"); // 静态资源匿名访问
         filterChainDefinitionMap.put("/users/logout", "logout");  // 用户退出，只需配置logout即可实现该功能
+        filterChainDefinitionMap.put("/users/", "anon");  // 用户登陆
+        filterChainDefinitionMap.put("/", "anon");  // 不需要登陆的首页
         //开放swagger资源 start
         filterChainDefinitionMap.put("/v2/api-docs", "anon");
         filterChainDefinitionMap.put("/webjars/**", "anon");

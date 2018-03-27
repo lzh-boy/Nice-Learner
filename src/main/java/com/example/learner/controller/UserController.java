@@ -57,11 +57,11 @@ public class  UserController {
     }
 
 
-    @PostMapping("/login")
+    @PostMapping("/")
     @ResponseBody
-    @ApiOperation(value = "登陆验证",httpMethod = "POST",response = User.class)
-    public Object doLogin(String userName, String password) {
-        UsernamePasswordToken token = new UsernamePasswordToken(userName, password);
+    @ApiOperation(value = "登陆验证",httpMethod = "POST")
+    public Object doLogin(@ModelAttribute("user") User user) {
+        UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(), user.getPassword());
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(token);	// 执行登录
