@@ -3,12 +3,13 @@ package com.example.learner;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 @MapperScan("com.example.learner.mapper")
 @EnableAsync//启动异步传输
-public class LearnerApplication {
+public class LearnerApplication extends SpringBootServletInitializer {
 //private static Logger logger = LoggerFactory.getLogger(CorgiApplication.class);
 
 	public static void main(String[] args) {
