@@ -79,4 +79,19 @@ public class LearnerApplicationTests {
 	public void deleteRole(){
 		roleService.delete((long) 5);
 	}
+
+	@Test
+	public void findRoleByRid(){
+		Role role=userService.findRoleByRid((long)2);
+		System.out.println(role.getRole()+role.getDescription()+role.getId()+role.getAvailable());
+
+	}
+
+	@Test
+	public void findUsersByRid(){
+		List<User> list=userService.findUsersByRid((long)2);
+		for (User user:list){
+			System.out.println(user.getId());
+		}
+	}
 }

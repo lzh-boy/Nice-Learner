@@ -51,8 +51,8 @@ public class ShiroConfigure {
         filterChainDefinitionMap.put("/css/**", "anon"); // 静态资源匿名访问
         filterChainDefinitionMap.put("/images/**", "anon"); // 静态资源匿名访问
         filterChainDefinitionMap.put("/semantic-ui/**", "anon"); // 静态资源匿名访问
-        filterChainDefinitionMap.put("/users/logout", "logout");  // 用户退出，只需配置logout即可实现该功能
-        filterChainDefinitionMap.put("/users/", "anon");  // 用户登陆
+        filterChainDefinitionMap.put("/logout", "logout");  // 用户退出，只需配置logout即可实现该功能
+        filterChainDefinitionMap.put("/api/users/", "anon");  // 用户登陆
         filterChainDefinitionMap.put("/", "anon");  // 不需要登陆的首页
         //开放swagger资源 start
         filterChainDefinitionMap.put("/v2/api-docs", "anon");
@@ -60,12 +60,12 @@ public class ShiroConfigure {
         filterChainDefinitionMap.put("/swagger-resources/**", "anon");
         filterChainDefinitionMap.put("/swagger-ui.html", "anon");
         //开放swagger资源 end
-        filterChainDefinitionMap.put("/users/register","anon");
-        filterChainDefinitionMap.put("/users/forgotPassword","anon");
-        filterChainDefinitionMap.put("/users/findPassword","anon");
+        filterChainDefinitionMap.put("/register","anon");
+        filterChainDefinitionMap.put("/forgotPassword","anon");
+        filterChainDefinitionMap.put("/findPassword","anon");
         filterChainDefinitionMap.put("/**", "authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
-        shiroFilterFactoryBean.setLoginUrl("/users/login");       // 登录的路径
+        shiroFilterFactoryBean.setLoginUrl("/login");       // 登录的路径
         shiroFilterFactoryBean.setSuccessUrl("/"); // 登录成功后跳转的路径
         shiroFilterFactoryBean.setUnauthorizedUrl("/error");  // 验证失败后跳转的路径
         return shiroFilterFactoryBean;

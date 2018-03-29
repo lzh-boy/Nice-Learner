@@ -16,7 +16,6 @@
         <result column="createdDate" jdbcType="VARCHAR" property="createdDate"/>
         <result column="updatedDate" jdbcType="VARCHAR" property="updatedDate"/>
         <result column="status" jdbcType="VARCHAR" property="status"/>
-
         <result column="rid" jdbcType="INTEGER" property="rid"/>
     </resultMap>
     <sql id="Base_Column_List">
@@ -36,4 +35,16 @@
     <select id="findByName" parameterType="string" resultMap="t_user">
         SELECT * FROM t_user WHERE userName = #{userName}
     </select>
+    <select id="findRoleByRid" parameterType="long" resultType="com.example.learner.bean.Role">
+        SELECT DISTINCT r.* FROM t_user u,t_role r WHERE u.rid=r.id AND u.rid = #{rid}
+    </select>
+    
+    <select id="findUsersByRid" parameterType="long" resultMap="t_user">
+         SELECT u.* FROM t_user u,t_role r WHERE u.rid=r.id AND u.rid=#{rid}
+    </select>
+    
+    <delete id="delete" parameterType="long">
+        DELETE FROM t_user WHERE id = #{id}
+    </delete>
+
 </mapper>

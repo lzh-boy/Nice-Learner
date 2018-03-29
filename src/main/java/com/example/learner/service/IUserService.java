@@ -1,6 +1,7 @@
 package com.example.learner.service;
 
 
+import com.example.learner.bean.Role;
 import com.example.learner.bean.User;
 
 import java.util.List;
@@ -26,4 +27,25 @@ public interface IUserService {
      * @param user
      */
     void add(User user);
+    /**
+     * 根据rid查询对应的角色信息
+     * @param rid
+     * @return
+     */
+    Role findRoleByRid(long rid);
+    /**
+     * 根据rid查询相同角色的所有用户
+     * @param rid
+     * @return
+     */
+    List<User> findUsersByRid(long rid);
+    /**
+     * 根据id删除一位用户
+     * @param id
+     */
+    void delete(long id);
+    /**
+     * 上传头像
+     */
+
 }

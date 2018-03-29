@@ -107,6 +107,10 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/src/main/resources/lib/aliyun-java-sdk-dysmsapi-1.0.0.jar</systemPath>
 		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+		</dependency>
 
 
 	</dependencies>

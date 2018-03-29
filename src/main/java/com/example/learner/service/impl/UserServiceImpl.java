@@ -1,5 +1,6 @@
 package com.example.learner.service.impl;
 
+import com.example.learner.bean.Role;
 import com.example.learner.bean.User;
 import com.example.learner.mapper.UserMapper;
 import com.example.learner.service.IUserService;
@@ -33,5 +34,20 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void add(User user) {
         userMapper.add(user);
+    }
+
+    @Override
+    public Role findRoleByRid(long rid) {
+        return userMapper.findRoleByRid(rid);
+    }
+
+    @Override
+    public List<User> findUsersByRid(long rid) {
+        return userMapper.findUsersByRid(rid);
+    }
+
+    @Override
+    public void delete(long id) {
+        userMapper.delete(id);
     }
 }

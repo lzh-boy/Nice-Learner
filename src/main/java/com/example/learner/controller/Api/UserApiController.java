@@ -1,6 +1,5 @@
-package com.example.learner.controller;
+package com.example.learner.controller.Api;
 
-import com.alibaba.fastjson.JSON;
 
 import com.example.learner.bean.User;
 import com.example.learner.service.impl.UserServiceImpl;
@@ -23,9 +22,9 @@ import javax.annotation.Resource;
  */
 @Controller
 @Api(value="用户管理接口",tags={"用户管理Api"})//接口简要标注，对中文的支持不太好
-@RequestMapping(value = "/users")//接口基本路径
-public class  UserController {
-    private static Logger logger= LoggerFactory.getLogger(UserController.class);
+@RequestMapping(value = "/api/users")//接口基本路径
+public class UserApiController {
+    private static Logger logger= LoggerFactory.getLogger(UserApiController.class);
 
     @Resource
     private UserServiceImpl userService;
@@ -34,28 +33,9 @@ public class  UserController {
     @GetMapping("/")
     @ResponseBody
     @ApiOperation(value = "获取全部用户的信息",httpMethod = "GET",response = User.class)
-    public String findAll(){
-        return JSON.toJSONString(userService.findAll());
+    public Object findAll(){
+        return ResultUtil.success(userService.findAll());
     }
-
-    @GetMapping("/login")
-    @ApiOperation(value = "跳转到登陆页面",httpMethod = "GET")
-    public String toLogin(){
-        return "login";
-    }
-
-    @GetMapping("/register")
-    @ApiOperation(value = "跳转到注册页面",httpMethod = "GET")
-    public String toRegister(){
-        return "register";
-    }
-
-    @GetMapping("/forgotPassword")
-    @ApiOperation(value = "忘记密码",httpMethod = "GET")
-    public String forgotPassword(){
-        return "forgot-password";
-    }
-
 
     @PostMapping("/")
     @ResponseBody
@@ -81,11 +61,5 @@ public class  UserController {
     }
 
 
-    @GetMapping("/logout")
-    @ApiOperation(value = "退出登陆",httpMethod = "GET")
-    public String logout(){
-        Subject subject = SecurityUtils.getSubject();
-        subject.logout();
-        return "login";
-    }
+
 }

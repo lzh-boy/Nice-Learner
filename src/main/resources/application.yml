@@ -23,7 +23,6 @@ spring:
   mvc:
     # 所有静态资源
     static-path-pattern: /**
-
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
@@ -33,10 +32,11 @@ spring:
       content-type: text/html
     cache: false
     check-template-location: true
-  http:
     encoding:
       enabled: true
       charset: UTF-8
+
+
   #设置重启的目录
   #spring.devtools.restart.additional-paths: src/main/java
   #classpath目录下的WEB-INF文件夹内容修改不重启
