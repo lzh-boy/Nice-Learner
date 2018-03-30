@@ -1,7 +1,9 @@
 package com.example.learner.enums;
 
 
+import lombok.Getter;
 
+@Getter
 public enum ResultEnums {
     CODE_SUCCESS(0000,"访问成功"),         //访问成功
     CODE_ERROR(0001,"访问失败"),
@@ -18,13 +20,6 @@ public enum ResultEnums {
         this.msg = msg;
     }
 
-    public Integer getCode() {
-        return code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
 
     public static String msg(int code){
 

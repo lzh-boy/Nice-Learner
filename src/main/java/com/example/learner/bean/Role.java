@@ -1,5 +1,8 @@
 package com.example.learner.bean;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -8,6 +11,8 @@ import java.util.List;
  *
  * 角色表
  */
+@Getter
+@Setter
 public class Role implements Serializable{
 
     private Integer id;
@@ -17,43 +22,4 @@ public class Role implements Serializable{
 
     private List<User> users;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Boolean getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(Boolean available) {
-        this.available = available;
-    }
-
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
 }

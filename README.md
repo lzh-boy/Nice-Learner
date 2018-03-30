@@ -27,6 +27,10 @@
 > a work around is to rollback to springfox-swagger2 2.5.0 .
 * Invalid character found in method name. HTTP method names must be tokens
 > 修改Https为Http
+* 1022 can't write duplicate key in table #‘sql_XXXXX’
+> 外键重名导致，另起一个名字即可解决。（mysql）
+* 1215 - Cannot add foreign key constraint
+> （1）外键对应的字段数据类型不一致,（2）设置外键时“删除时”设置为“SET NULL”,（3）两张表的存储引擎不一致
 #### 项目目标
 * 3/27---3/30 数据库设计，以及对应实体类，数据库映射表完成
 * 3/31---4/10 逻辑处理的实现

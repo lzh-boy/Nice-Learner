@@ -20,6 +20,7 @@ import java.io.File;
 @RequestMapping("/uploadfile")
 public class UploadFileController {
     private Logger logger= LoggerFactory.getLogger(UploadFileController.class);
+
     @RequestMapping("/upload")
     public String upload() {
         return "/upload";
