@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Getter
 @Setter
-public class Role implements Serializable{
+public class Role  implements Serializable{
 
     private Integer id;
     private String role;        // 角色

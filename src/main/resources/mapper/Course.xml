@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learner.mapper.CourseMapper">
+    <resultMap id="tb_course" type="com.example.learner.bean.Course">
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="degreeId" jdbcType="INTEGER" property="degreeId"/>
+        <result column="categoryId" jdbcType="INTEGER" property="categoryId"/>
+        <result column="createTime" jdbcType="VARCHAR" property="createTime"/>
+        <result column="authorId" jdbcType="INTEGER" property="authorId"/>
+        <result column="describe" jdbcType="VARCHAR" property="describe"/>
+        <result column="lengthTime" jdbcType="VARCHAR" property="lengthTime"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+
+    </resultMap>
+</mapper>

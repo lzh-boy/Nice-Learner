@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.learner.mapper.CollectMapper">
+    <resultMap id="tb_collect_history" type="com.example.learner.bean.Collect">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="courseId" jdbcType="INTEGER" property="courseId"/>
+        <result column="userId" jdbcType="INTEGER" property="userId"/>
+        <result column="lastTime" jdbcType="VARCHAR" property="lastTime"/>
+        <result column="ishistory" jdbcType="INTEGER" property="ishistory"/>
+        <result column="iscollect" jdbcType="INTEGER" property="iscollect"/>
+    </resultMap>
+    
+</mapper>

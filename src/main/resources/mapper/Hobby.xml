@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learner.mapper.HobbyMapper">
+    <resultMap id="tb_hobby" type="com.example.learner.bean.Hobby">
+        <result column="userId" jdbcType="INTEGER" property="userId"/>
+        <result column="categoryId" jdbcType="INTEGER" property="categoryId"/>
+    </resultMap>
+    
+    <insert id="addBatchCategory" parameterType="java.util.List" useGeneratedKeys="true">
+        INSERT INTO tb_hobby(userId,categoryId) VALUES
+        <foreach collection="listHobby" item="item" index="index" separator=",">
+            (#{item.userId}, #{item.categoryId})
+        </foreach>
+        ON DUPLICATE KEY UPDATE categoryId = VALUES(categoryId)
+    </insert>
+</mapper>

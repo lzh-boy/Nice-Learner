@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learner.mapper.CommentMapper">
+    <resultMap id="tb_comment" type="com.example.learner.bean.Comment">
+        <result property="id" jdbcType="INTEGER" column="id"/>
+        <result property="chapterId" jdbcType="INTEGER" column="chapterId"/>
+        <result property="createTime" jdbcType="VARCHAR" column="createTime"/>
+        <result property="userId" jdbcType="INTEGER" column="userId"/>
+        <result property="content" jdbcType="VARCHAR" column="content"/>
+        <result property="tocomment" jdbcType="VARCHAR" column="tocomment"/>
+
+    </resultMap>
+</mapper>
