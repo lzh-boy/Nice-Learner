@@ -44,7 +44,7 @@ public class MyShiroRealm extends AuthorizingRealm {
         if(null == user){
             return null;
         }
-        Role role=roleService.findRolesById(user.getRid());
+        Role role=roleService.findRolesById(user.getRoleId());
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         log.info("addRole="+role.getRole());
         authorizationInfo.addRole(role.getRole());  // 添加角色

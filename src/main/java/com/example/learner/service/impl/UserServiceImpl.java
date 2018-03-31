@@ -37,17 +37,17 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public Role findRoleByRid(long rid) {
+    public Role findRoleByRid(Integer rid) {
         return userMapper.findRoleByRid(rid);
     }
 
     @Override
-    public List<User> findUsersByRid(long rid) {
+    public List<User> findUsersByRid(Integer rid) {
         return userMapper.findUsersByRid(rid);
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Integer id) {
         userMapper.delete(id);
     }
 }

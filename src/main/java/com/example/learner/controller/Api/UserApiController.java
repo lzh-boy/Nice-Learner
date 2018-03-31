@@ -41,7 +41,7 @@ public class UserApiController {
     @ResponseBody
     @ApiOperation(value = "登陆验证",httpMethod = "POST")
     public Object doLogin(@ModelAttribute("user") User user) {
-        UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(), user.getPassword());
+        UsernamePasswordToken token = new UsernamePasswordToken(user.getName(), user.getPassword());
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(token);	// 执行登录

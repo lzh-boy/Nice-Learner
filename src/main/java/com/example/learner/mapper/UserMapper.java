@@ -38,18 +38,18 @@ public interface UserMapper {
      * @param rid
      * @return
      */
-    Role findRoleByRid(long rid);
+    Role findRoleByRid(Integer rid);
 
     /**
      * 根据rid查询相同角色的所有用户
      * @param rid
      * @return
      */
-    List<User> findUsersByRid(long rid);
+    List<User> findUsersByRid(Integer rid);
 
     /**
      * 根据id删除一位用户
      * @param id
      */
-    void delete(long id);
+    void delete(Integer id);
 }

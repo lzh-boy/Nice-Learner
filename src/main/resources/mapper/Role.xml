@@ -4,23 +4,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.learner.mapper.RoleMapper">
-    <resultMap id="t_role" type="com.example.learner.bean.Role">
+    <resultMap id="tb_role" type="com.example.learner.bean.Role">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="role" jdbcType="VARCHAR" property="role"/>
         <result column="description" jdbcType="VARCHAR" property="description"/>
-        <result column="available" jdbcType="INTEGER" property="available"/>
-        <collection property="users"  resultMap="com.example.learner.bean.User"/>
+        <result column="state" jdbcType="INTEGER" property="available"/>
     </resultMap>
     <sql id="Base_Column_List">
         role,description,available
     </sql>
 
-    <select id="findRolesById" parameterType="long" resultType="com.example.learner.bean.Role">
-      SELECT * FROM t_role WHERE id = #{id}
+    <select id="findRolesById" parameterType="Integer" resultType="com.example.learner.bean.Role">
+      SELECT * FROM tb_role WHERE id = #{id}
     </select>
 
-    <select id="findAll" resultMap="t_role">
-        SELECT * FROM t_role
+    <select id="findAll" resultMap="tb_role">
+        SELECT * FROM tb_role
     </select>
 
     <insert id="add" parameterType="com.example.learner.bean.Role">

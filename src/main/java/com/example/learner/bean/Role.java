@@ -18,8 +18,8 @@ public class Role  implements Serializable{
     private Integer id;
     private String role;        // 角色
     private String description; // 角色描述
-    private Boolean available = Boolean.FALSE; // 默认不可用
+    private Boolean state = Boolean.FALSE; // 默认不可用
 
-    private List<User> users;
+
 
 }

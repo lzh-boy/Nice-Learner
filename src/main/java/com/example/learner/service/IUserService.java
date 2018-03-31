@@ -20,7 +20,7 @@ public interface IUserService {
      * @param userName
      * @return
      */
-    User findByName(String userName);
+    User findByName(String name);
 
     /**
      * 添加一位用户
@@ -29,21 +29,21 @@ public interface IUserService {
     void add(User user);
     /**
      * 根据rid查询对应的角色信息
-     * @param rid
+     * @param roleId
      * @return
      */
-    Role findRoleByRid(long rid);
+    Role findRoleByRid(Integer roleId);
     /**
      * 根据rid查询相同角色的所有用户
-     * @param rid
+     * @param roleId
      * @return
      */
-    List<User> findUsersByRid(long rid);
+    List<User> findUsersByRid(Integer roleId);
     /**
      * 根据id删除一位用户
      * @param id
      */
-    void delete(long id);
+    void delete(Integer id);
     /**
      * 上传头像
      */

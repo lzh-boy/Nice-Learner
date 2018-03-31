@@ -20,7 +20,7 @@ public interface RoleMapper {
      * @param id
      * @return
      */
-    Role findRolesById(Long id);
+    Role findRolesById(Integer id);
 
     /**
      * 查找全部角色
@@ -38,5 +38,5 @@ public interface RoleMapper {
      * 删除一位角色
      * @param id
      */
-    void delete(Long id);
+    void delete(Integer id);
 }

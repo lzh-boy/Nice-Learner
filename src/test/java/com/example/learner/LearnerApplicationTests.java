@@ -28,14 +28,11 @@ public class LearnerApplicationTests {
 		for (int i = 0; i < 17; i++) {
 			User user = new User();
 			user.setAccount("12345" + i);
-			user.setUserName("123456" + i);
+			user.setName("123456" + i);
 			user.setEmail("51103942@qq.com");
-			user.setIphone(12349857777L - i + "");
 			user.setPlainPassword("12345678");
-			user.setPlatform("qq");
-			user.setRid((long) 2);
-			user.setCreatedDate(LqNiceUtil.getCurrentDateTime());
-			user.setUpdatedDate(LqNiceUtil.getCurrentDateTime());
+			user.setRoleId( 2);
+			user.setCreateTime(LqNiceUtil.getCurrentDateTime());
 			LqNiceUtil.entryptPassword(user);
 			System.out.println(user);
 			userService.add(user);
@@ -53,8 +50,8 @@ public class LearnerApplicationTests {
 	@Test
 	public void findUserByName(){
 		User user=userService.findByName("1234560");
-		System.out.println(user.getAccount());
-		Role role=  roleService.findRolesById(user.getRid());
+		System.out.println(user.getName());
+		Role role=  roleService.findRolesById(user.getRoleId());
 		System.out.println(role.getRole());
 	}
 
@@ -71,25 +68,25 @@ public class LearnerApplicationTests {
 		Role role=new Role();
 		role.setRole("test");
 		role.setDescription("test");
-		role.setAvailable(false);
+		role.setState(false);
 		roleService.add(role);
 	}
 
 	@Test
 	public void deleteRole(){
-		roleService.delete((long) 5);
+		roleService.delete( 5);
 	}
 
 	@Test
 	public void findRoleByRid(){
-		Role role=userService.findRoleByRid((long)2);
-		System.out.println(role.getRole()+role.getDescription()+role.getId()+role.getAvailable());
+		Role role=userService.findRoleByRid(2);
+		System.out.println(role.getRole()+role.getDescription()+role.getId()+role.getState());
 
 	}
 
 	@Test
 	public void findUsersByRid(){
-		List<User> list=userService.findUsersByRid((long)2);
+		List<User> list=userService.findUsersByRid(2);
 		for (User user:list){
 			System.out.println(user.getId());
 		}

@@ -20,7 +20,7 @@ public class RoleServiceImpl implements IRoleService {
     private RoleMapper roleMapper;
 
     @Override
-    public Role findRolesById(Long id) {
+    public Role findRolesById(Integer id) {
         return roleMapper.findRolesById(id);
     }
 
@@ -35,7 +35,7 @@ public class RoleServiceImpl implements IRoleService {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(Integer id) {
         roleMapper.delete(id);
     }
 }

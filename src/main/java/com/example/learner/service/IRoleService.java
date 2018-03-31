@@ -14,7 +14,7 @@ public interface IRoleService {
      * @param id
      * @return
      */
-    Role findRolesById(Long id);
+    Role findRolesById(Integer id);
     /**
      *  添加一位角色
      * @param role
@@ -29,7 +29,7 @@ public interface IRoleService {
      * 删除一位角色
      * @param id
      */
-    void delete(Long id);
+    void delete(Integer id);
 
 
 
