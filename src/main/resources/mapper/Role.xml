@@ -8,25 +8,10 @@
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="role" jdbcType="VARCHAR" property="role"/>
         <result column="description" jdbcType="VARCHAR" property="description"/>
-        <result column="state" jdbcType="INTEGER" property="available"/>
+        <result column="state" jdbcType="INTEGER" property="state"/>
     </resultMap>
     <sql id="Base_Column_List">
-        role,description,available
+        role,description,state
     </sql>
 
-    <select id="findRolesById" parameterType="Integer" resultType="com.example.learner.bean.Role">
-      SELECT * FROM tb_role WHERE id = #{id}
-    </select>
-
-    <select id="findAll" resultMap="tb_role">
-        SELECT * FROM tb_role
-    </select>
-
-    <insert id="add" parameterType="com.example.learner.bean.Role">
-        INSERT INTO t_role( <include refid="Base_Column_List" />) VALUES (#{role},#{description},#{available})
-    </insert>
-
-    <delete id="delete" parameterType="long">
-        DELETE FROM t_role WHERE id = #{id}
-    </delete>
 </mapper>

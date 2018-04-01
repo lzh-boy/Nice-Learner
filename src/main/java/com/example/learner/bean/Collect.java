@@ -1,18 +1,15 @@
 package com.example.learner.bean;
 
-import lombok.Getter;
-import lombok.Setter;
+
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * 用户收藏和历史记录实体类
  * @author xyl
  *
  */
-@Getter
-@Setter
+
 public class Collect implements Serializable{
 
 	private Integer id;//主键
@@ -27,5 +24,51 @@ public class Collect implements Serializable{
 
 	private Boolean iscollect;//是否收藏
 
-	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getCourseId() {
+		return courseId;
+	}
+
+	public void setCourseId(Integer courseId) {
+		this.courseId = courseId;
+	}
+
+	public String getLastTime() {
+		return lastTime;
+	}
+
+	public void setLastTime(String lastTime) {
+		this.lastTime = lastTime;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public Boolean getIshistory() {
+		return ishistory;
+	}
+
+	public void setIshistory(Boolean ishistory) {
+		this.ishistory = ishistory;
+	}
+
+	public Boolean getIscollect() {
+		return iscollect;
+	}
+
+	public void setIscollect(Boolean iscollect) {
+		this.iscollect = iscollect;
+	}
 }

@@ -22,10 +22,10 @@ public interface UserMapper {
 
     /**
      * 通过昵称查找对应得用户
-     * @param userName
+     * @param name
      * @return
      */
-    User findByName(String userName);
+    User findByName(String name);
 
     /**
      * 添加一位用户

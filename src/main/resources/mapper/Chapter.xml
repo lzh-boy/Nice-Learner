@@ -10,5 +10,12 @@
         <result column="title" jdbcType="VARCHAR" property="title"/>
         <result column="video" jdbcType="VARCHAR" property="video"/>
     </resultMap>
-    
+
+    <insert id="addBatchChapter" useGeneratedKeys="true">
+        INSERT INTO tb_chapter(title,video,courseId) VALUES
+        <foreach collection="chapterList" item="item" index="index" separator=",">
+            (#{item.title}, #{item.video},#{item.courseId})
+        </foreach>
+        ON DUPLICATE KEY UPDATE title = VALUES(title)
+    </insert>
 </mapper>

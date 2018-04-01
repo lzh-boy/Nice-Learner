@@ -1,18 +1,16 @@
 package com.example.learner.bean;
 
-import lombok.Getter;
-import lombok.Setter;
+
 
 import java.io.Serializable;
-import java.util.List;
+
 
 /**
  * Created by LiQian_Nice on 2018/3/21
  *
  * 角色表
  */
-@Getter
-@Setter
+
 public class Role  implements Serializable{
 
     private Integer id;
@@ -20,6 +18,53 @@ public class Role  implements Serializable{
     private String description; // 角色描述
     private Boolean state = Boolean.FALSE; // 默认不可用
 
+    public Role(String role, String description, boolean state) {
+        this.role=role;
+        this.description=description;
+        this.state=state;
+    }
+
+    public Role() {
+
+    }
+
+    public Role(int id,String role, String description, boolean state) {
+        this.id=id;
+        this.role=role;
+        this.description=description;
+        this.state=state;
+    }
 
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Boolean getState() {
+        return state;
+    }
+
+    public void setState(Boolean state) {
+        this.state = state;
+    }
 }

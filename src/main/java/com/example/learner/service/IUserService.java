@@ -17,7 +17,7 @@ public interface IUserService {
     List<User> findAll();
     /**
      * 通过昵称查找对应得用户
-     * @param userName
+     * @param name
      * @return
      */
     User findByName(String name);

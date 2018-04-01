@@ -10,9 +10,22 @@
         <result column="categoryId" jdbcType="INTEGER" property="categoryId"/>
         <result column="createTime" jdbcType="VARCHAR" property="createTime"/>
         <result column="authorId" jdbcType="INTEGER" property="authorId"/>
-        <result column="describe" jdbcType="VARCHAR" property="describe"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
         <result column="lengthTime" jdbcType="VARCHAR" property="lengthTime"/>
         <result column="status" jdbcType="INTEGER" property="status"/>
 
     </resultMap>
+
+    <select id="findAllBycategoryIdAndDegreeId" resultMap="tb_course">
+        SELECT * FROM tb_course
+        <where>
+              <if test="categoryId!=0">
+                AND categoryId = #{categoryId}
+              </if>
+            <if test="degreeId!=0">
+                AND degreeId = #{degreeId}
+            </if>
+        </where>
+    </select>
+
 </mapper>
