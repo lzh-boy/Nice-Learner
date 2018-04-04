@@ -32,13 +32,14 @@ public class HobbyMapperTest {
             logger.info(String.valueOf(category.getCategory()));
         }
     }
-
+    List<Hobby> list=null;
     @Test
     public void addCategory(){
-        List<Hobby> list=new ArrayList<>();
+        list=new ArrayList<>();
         list.add(new Hobby(2,10));
         list.add(new Hobby(2,11));
         list.add(new Hobby(2,12));
+
         hobbyMapper.addBatchCategory(list);
     }
 }

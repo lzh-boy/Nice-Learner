@@ -6,6 +6,9 @@ import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -43,6 +46,14 @@ public class LqNiceUtil {
         logger.info("password="+md5Password.toString());
     }
 
+    public static String hasErrors(BindingResult bindingResult){
+        //如果验证添加的表单数据错误，返回失败Json
+        StringBuffer sb = new StringBuffer();
+        for(ObjectError objectError : bindingResult.getAllErrors()){
+            sb.append(((FieldError)objectError).getField() +" : ").append(objectError.getDefaultMessage()+"&");
+        }
+        return sb.toString();
+    }
     /**
      * 获得当前时间
      * @return

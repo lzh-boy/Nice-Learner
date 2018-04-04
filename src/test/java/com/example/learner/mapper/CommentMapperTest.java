@@ -1,6 +1,5 @@
 package com.example.learner.mapper;
 
-import com.example.learner.bean.Aspect;
 import com.example.learner.bean.Comment;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,14 +37,14 @@ public class CommentMapperTest {
     @Test
     public void add(){
         Comment comment=new Comment(4,2,"2018-04-25 21:06:14"
-                ,6,"测试44","3");
+                ,6,"测试44");
         commentMapper.add(comment);
     }
 
     @Test
     public void update(){
         commentMapper.update(new Comment(1,1,"2018-04-25 21:06:14"
-                ,4,"测试1","2"));
+                ,4,"测试2"));
     }
 
     @Test

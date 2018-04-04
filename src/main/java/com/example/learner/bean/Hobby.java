@@ -24,6 +24,11 @@ public class Hobby implements Serializable{
         this.userId=userId;
         this.categoryId=categoryId;
     }
+
+    public Hobby() {
+
+    }
+
     public Integer getUserId() {
         return userId;
     }

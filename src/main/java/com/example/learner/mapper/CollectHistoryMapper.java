@@ -23,28 +23,28 @@ public interface CollectHistoryMapper {
     CollectHistory findCollectHistoryById(Integer id);
 
     /**
-     * 查找全部角色
+     * 查找全部收藏记录
      * @return
      */
     @Select("SELECT * FROM tb_collect_history")
     List<CollectHistory> findAll();
 
     /**
-     * 添加一位角色
+     * 添加一个收藏
      * @param collectHistory
      */
     @Insert(" INSERT INTO tb_collect_history(courseId,lastTime,userId,ishistory,iscollect) VALUES (#{courseId},#{lastTime},#{userId},#{ishistory},#{iscollect})")
     void add(CollectHistory collectHistory);
 
     /**
-     * 更新一位角色
+     * 更新收藏
      * @param collectHistory
      */
     @Update("update tb_collect_history set courseId = #{courseId},lastTime = #{lastTime},userId = #{userId},ishistory = #{ishistory},iscollect = #{iscollect} where id = #{id} ")
     void update(CollectHistory collectHistory);
 
     /**
-     * 删除一位角色
+     * 删除一位收藏
      * @param id
      */
     @Delete("DELETE FROM tb_collect_history WHERE id = #{id}")

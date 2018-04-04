@@ -18,15 +18,17 @@ public class Role  implements Serializable{
     private String description; // 角色描述
     private Boolean state = Boolean.FALSE; // 默认不可用
 
+    public Role() {
+
+    }
+
     public Role(String role, String description, boolean state) {
         this.role=role;
         this.description=description;
         this.state=state;
     }
 
-    public Role() {
 
-    }
 
     public Role(int id,String role, String description, boolean state) {
         this.id=id;

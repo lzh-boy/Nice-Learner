@@ -18,6 +18,9 @@ public class Aspect implements Serializable {
 
 	private String aspect;//课程方向名
 
+	public Aspect(){
+
+	}
 	public Aspect(Integer id,String aspect){
 		this.id=id;
 		this.aspect=aspect;

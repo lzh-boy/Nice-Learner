@@ -2,8 +2,6 @@ package com.example.learner.bean;
 
 
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -12,32 +10,31 @@ import java.io.Serializable;
  * 评论表
  */
 
-public class Comment implements Serializable{
+public class Reply implements Serializable{
 
     private Integer id;//主键
 
-    @NotNull(message = "章节id不能为空")
     private Integer chapterId;//章节id
 
-    @NotEmpty(message = "创建时间不能为空")
     private String createTime;//创建时间
 
-    @NotNull(message = "用户id不能为空")
     private Integer userId;//用户id
 
-    @NotEmpty(message = "评论内容不能为空")
-    private String content;//评论内容
+    private String content;//回复内容
+
+    private Integer commentId;//回复的评论Id
 
 
 
-    public Comment() {}
+    public Reply() {}
 
-    public Comment(Integer id, Integer chapterId, String createTime, Integer userId, String content) {
+    public Reply(Integer id, Integer chapterId, String createTime, Integer userId, String content, Integer commentId) {
         this.id = id;
         this.chapterId = chapterId;
         this.createTime = createTime;
         this.userId = userId;
         this.content = content;
+        this.commentId=commentId;
     }
 
     public Integer getId() {
@@ -80,4 +77,7 @@ public class Comment implements Serializable{
         this.content = content;
     }
 
+    public Integer getCommentId() {return commentId; }
+
+    public void setCommentId(Integer commentId) { this.commentId = commentId; }
 }

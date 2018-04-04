@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 /**
  * Created by LiQian_Nice on 2018/3/20
@@ -39,7 +40,7 @@ public class UserApiController {
 
     @PostMapping("/")
     @ResponseBody
-    @ApiOperation(value = "登陆验证",httpMethod = "POST")
+    @ApiOperation(value = "通过用户姓名和密码查询账号是否存在",httpMethod = "GET")
     public Object doLogin(@ModelAttribute("user") User user) {
         UsernamePasswordToken token = new UsernamePasswordToken(user.getName(), user.getPassword());
         Subject subject = SecurityUtils.getSubject();
@@ -51,12 +52,12 @@ public class UserApiController {
         return ResultUtil.success();
     }
 
-    @PostMapping("/findPassword/{email}")
+    @GetMapping("/{email}")
     @ResponseBody
-    @ApiOperation(value = "找回密码",httpMethod = "POST")
+    @ApiOperation(value = "找回密码",httpMethod = "GET")
     public Object findPassword(@PathVariable("email") String email) throws Exception {
         logger.info("正在发送");
-        EmailUtil.sendMail(email);
+        //EmailUtil.sendMail(email);
         return ResultUtil.success();
     }
 
