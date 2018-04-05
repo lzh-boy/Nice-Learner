@@ -27,7 +27,7 @@ public class AspectServiceImpl implements IAspectService {
 	}
 
 	@Override
-	public void add(String aspect) {
+	public void add(Aspect aspect) {
         aspectMapper.add(aspect);
 	}
 

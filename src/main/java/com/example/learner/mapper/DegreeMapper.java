@@ -27,7 +27,7 @@ public interface DegreeMapper {
      * @param degree
      */
     @Insert("insert into tb_degree(degree) values (#{degree})")
-    void add(String degree);
+    void add(Degree degree);
 
     /**
      * 更新一个难度级别

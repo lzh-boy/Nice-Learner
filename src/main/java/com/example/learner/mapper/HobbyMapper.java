@@ -15,6 +15,7 @@ import java.util.List;
 @Component
 public interface HobbyMapper {
 
+
     /**
      * 根据用户id查询选择的爱好
      * @param userId

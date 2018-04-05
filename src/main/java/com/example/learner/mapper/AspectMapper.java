@@ -24,7 +24,7 @@ public interface AspectMapper {
      * @param aspect
      */
     @Insert("insert into tb_aspect(aspect) values (#{aspect})")
-    void add(String aspect);
+    void add(Aspect aspect);
 
     /**
      * 更新一个方向

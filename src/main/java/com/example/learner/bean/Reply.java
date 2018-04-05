@@ -14,6 +14,7 @@ public class Reply implements Serializable{
 
     private Integer id;//主键
 
+
     private Integer chapterId;//章节id
 
     private String createTime;//创建时间

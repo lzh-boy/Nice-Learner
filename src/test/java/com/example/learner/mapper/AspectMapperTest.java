@@ -34,7 +34,9 @@ public class AspectMapperTest {
 
     @Test
     public void add(){
-        aspectMapper.add("test");
+        Aspect aspect=new Aspect();
+        aspect.setAspect("test");
+        aspectMapper.add(aspect);
     }
 
     @Test

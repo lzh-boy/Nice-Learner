@@ -14,8 +14,11 @@ import java.io.Serializable;
 public class Role  implements Serializable{
 
     private Integer id;
+
     private String role;        // 角色
+
     private String description; // 角色描述
+
     private Boolean state = Boolean.FALSE; // 默认不可用
 
     public Role() {

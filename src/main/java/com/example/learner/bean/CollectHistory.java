@@ -3,6 +3,9 @@ package com.example.learner.bean;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by LiQian_Nice on 2018/3/31
  *
@@ -13,14 +16,19 @@ public class CollectHistory implements Serializable{
 
     private Integer id;//主键
 
+    @NotNull(message="课程ID不能为空")
     private Integer courseId;//课程id
 
-    private String lastTime;//最后时间
 
+    private String lastTime;//历史观看最后时间
+
+    @NotNull(message="用戶ID不能为空")
     private Integer userId;//用户id
 
+    @NotNull(message="是否为历史不能为空")
     private boolean ishistory;//是否历史
 
+    @NotNull(message="是否为收藏不能为空")
     private boolean iscollect;//是否收藏
 
 

@@ -1,5 +1,7 @@
 package com.example.learner.bean;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.sql.Date;
 
@@ -13,8 +15,10 @@ public class Notes implements Serializable{
 
     private Integer id;//主键
 
+    @NotNull(message = "用户不能为空")
     private Integer userId;//用户id
 
+    @NotEmpty(message = "内容不能为空")
     private String content;//内容
 
     private String createDate;//创建时间
@@ -22,8 +26,7 @@ public class Notes implements Serializable{
     public Notes(){
 
     }
-    public Notes(int id, int userId, String content, String createDate) {
-             this.id=id;
+    public Notes( int userId, String content, String createDate) {
              this.userId=userId;
              this.content=content;
              this.createDate=createDate;

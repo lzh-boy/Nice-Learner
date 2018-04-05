@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 public interface NotesMapper {
+
     /**
      * 查找所有
      */

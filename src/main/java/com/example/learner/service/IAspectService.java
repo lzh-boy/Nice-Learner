@@ -23,7 +23,7 @@ public interface IAspectService {
      * 添加一个方向
      * @param aspect
      */
-    void add(String aspect);
+    void add(Aspect aspect);
 
     /**
      * 更新一个方向

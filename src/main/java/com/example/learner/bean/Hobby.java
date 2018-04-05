@@ -5,6 +5,7 @@ package com.example.learner.bean;
 
 
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -16,8 +17,10 @@ import java.io.Serializable;
 
 public class Hobby implements Serializable{
 
+    @NotNull(message = "用户不能为空")
     private Integer userId;//用户id
 
+    @NotNull(message = "分类不能为空")
     private Integer categoryId;//分类id
 
     public Hobby(Integer userId, Integer categoryId){

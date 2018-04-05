@@ -1,7 +1,6 @@
 package com.example.learner.controller;
 
 import com.aliyun.mns.common.ServiceException;
-import com.example.learner.bean.Result;
 import com.example.learner.util.ResultUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

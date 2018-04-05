@@ -2,6 +2,7 @@ package com.example.learner.bean;
 
 
 
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 /**
@@ -14,6 +15,7 @@ public class Degree implements Serializable {
 
     private Integer id;//主键
 
+    @NotEmpty(message = "难度不能为空")
     private String degree;//难度
 
     public Degree(){

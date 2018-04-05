@@ -37,7 +37,9 @@ public class DegreeMapperTest {
 
     @Test
     public void add(){
-    	degreeMapper.add("test123");
+        Degree degree=new Degree();
+        degree.setDegree("test123");
+    	degreeMapper.add(degree);
     }
 
     @Test

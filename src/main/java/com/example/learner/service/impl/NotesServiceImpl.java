@@ -19,36 +19,36 @@ public class NotesServiceImpl implements INotesService {
 
     @Override
     public List<Notes> findAll() {
-        return null;
+        return notesMapper.findAll();
     }
 
     @Override
     public Notes findNotesById(Integer id) {
-        return null;
+        return notesMapper.findNotesById(id);
     }
 
     @Override
     public List<Notes> findNotesByUserId(Integer id) {
-        return null;
+        return notesMapper.findNotesByUserId(id);
     }
 
     @Override
     public List<Notes> findNotesByCreateDate(String createTime) {
-        return null;
+        return notesMapper.findNotesByCreateDate(createTime);
     }
 
     @Override
     public void add(Notes notes) {
-
+        notesMapper.add(notes);
     }
 
     @Override
     public void update(Notes notes) {
-
+        notesMapper.update(notes);
     }
 
     @Override
     public void delete(Integer id) {
-
+        notesMapper.delete(id);
     }
 }

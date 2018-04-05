@@ -20,7 +20,7 @@ public interface IDegreeService {
      * 添加一个难度级别
      * @param degree
      */
-    void add(String degree);
+    void add(Degree degree);
 
     /**
      * 更新一个难度级别

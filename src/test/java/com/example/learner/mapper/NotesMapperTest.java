@@ -55,7 +55,7 @@ public class NotesMapperTest {
 
     @Test
     public void add(){
-        Notes notes=new Notes(1,1,"LTY","2017-04-03 11:25:17");
+        Notes notes=new Notes(6,"LTY","2017-04-03 11:25:17");
         notesMapper.add(notes);
     }
 
@@ -67,7 +67,7 @@ public class NotesMapperTest {
     @Test
     public void update(){
         notesMapper.update(
-                new Notes(1,1,"testUpdate","2017-04-03 11:25:17"));
+                new Notes(1,"testUpdate","2017-04-03 11:25:17"));
     }
 
 }

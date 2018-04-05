@@ -3,7 +3,6 @@ package com.example.learner.controller.Api;
 
 import com.example.learner.bean.User;
 import com.example.learner.service.impl.UserServiceImpl;
-import com.example.learner.util.EmailUtil;
 import com.example.learner.util.ResultUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -16,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.validation.Valid;
 
 /**
  * Created by LiQian_Nice on 2018/3/20
@@ -24,8 +22,8 @@ import javax.validation.Valid;
 @Controller
 @Api(value="用户管理接口",tags={"用户管理Api"})//接口简要标注，对中文的支持不太好
 @RequestMapping(value = "/api/users")//接口基本路径
-public class UserApiController {
-    private static Logger logger= LoggerFactory.getLogger(UserApiController.class);
+public class UserController {
+    private static Logger logger= LoggerFactory.getLogger(UserController.class);
 
     @Resource
     private UserServiceImpl userService;

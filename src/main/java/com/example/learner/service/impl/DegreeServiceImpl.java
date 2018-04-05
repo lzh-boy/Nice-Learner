@@ -23,7 +23,7 @@ public class DegreeServiceImpl implements IDegreeService {
     }
 
     @Override
-    public void add(String degree) {
+    public void add(Degree degree) {
         degreeMapper.add(degree);
     }
 

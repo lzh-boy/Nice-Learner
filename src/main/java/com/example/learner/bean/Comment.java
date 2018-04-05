@@ -19,7 +19,7 @@ public class Comment implements Serializable{
     @NotNull(message = "章节id不能为空")
     private Integer chapterId;//章节id
 
-    @NotEmpty(message = "创建时间不能为空")
+
     private String createTime;//创建时间
 
     @NotNull(message = "用户id不能为空")
