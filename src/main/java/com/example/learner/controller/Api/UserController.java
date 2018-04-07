@@ -2,6 +2,7 @@ package com.example.learner.controller.Api;
 
 
 import com.example.learner.bean.User;
+import com.example.learner.service.impl.RedisService;
 import com.example.learner.service.impl.UserServiceImpl;
 import com.example.learner.util.ResultUtil;
 import io.swagger.annotations.Api;
@@ -28,6 +29,8 @@ public class UserController {
     @Resource
     private UserServiceImpl userService;
 
+    @Resource
+    private RedisService redisService ;
 
     @GetMapping("/")
     @ResponseBody
@@ -44,6 +47,7 @@ public class UserController {
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(token);	// 执行登录
+            redisService.set(user.getName(),user.getPassword());
         } catch (Exception e) {
             e.printStackTrace();
         }
