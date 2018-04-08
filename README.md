@@ -1,27 +1,83 @@
 ### Nice-Learner
 基于SpringBoot2的个性化推荐教育学习网站。
-#### 基本需求分析
-* 最高层管理员
-> 对其他信息的查看以及管理
-* 审核员
-> 对教师的审核以及教师注册资料的审核
-* 教师
-> 注册，上传视频，查看家长评论，个人资料页
-* 用户(家长或学生)
-> 注册，选择自己感兴趣的类别，查看推荐视频，评论，收藏。
-* 其他用户(未注册)
-> 没有权限查看视频
-#### 数据库设计
-* 用户表
-* 角色表
-* 教师上传视频表
-* 学生或家长评论表
-* 课程表  
-* 收藏表
-* 学生或家长选择感兴趣的类别表
-* 分类表
-* 用户登陆记录表
-* ....
+
+----------
+
+
+#### 环境配置
+ - Java: 1.8
+ - Maven: 3.5.0
+ - Tomcat: 9.0.0
+ - 开发工具: IntellJ IDEA
+
+
+
+#### 技术选型
+##### 后端技术
+
+<table>
+        <tr>
+            <th>技术</th>
+            <th>名称</th>
+            <th>官网</th>
+        </tr>
+        <tr>
+            <th>Spring Framework</th>
+            <th>容器</th>
+            <th>http://projects.spring.io/spring-framework/</th>
+        </tr>
+        <tr>
+            <th>Apache Shiro</th>
+            <th>安全框架</th>
+            <th>http://shiro.apache.org/</th>
+        </tr>
+        <tr>
+            <th>Redis</th>
+            <th>分布式缓存数据库</th>
+            <th>https://redis.io/</th>
+        </tr>
+        <tr>
+            <th>SpringMVC</th>
+            <th>MVC框架</th>
+            <th>http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc</th>
+        </tr>
+        <tr>
+            <th>MyBatis</th>
+            <th>ORM框架</th>
+            <th>http://www.mybatis.org/mybatis-3/zh/index.html</th>
+        </tr>
+        <tr>
+            <th>Thymeleaf</th>
+            <th>模板引擎</th>
+            <th>http://www.thymeleaf.org/</th>
+        </tr>
+        <tr>
+            <th>HikariCP</th>
+            <th>数据库连接池</th>
+            <th>http://brettwooldridge.github.io/HikariCP/</th>       </tr>
+        <tr>
+            <th>validation</th>
+            <th>字段校验</th>
+            <th>http://jcp.org/en/jsr/detail?id=303</th>
+        </tr>
+        <tr>
+            <th>Slf4j</th>
+            <th>日志组件</th>
+            <th>https://www.slf4j.org</th>
+        </tr>
+        <tr>
+            <th>Swagger2</th>
+            <th>接口测试框架</th>
+            <th>http://swagger.io/</th>
+        </tr>
+        <tr>
+            <th>maven</th>
+            <th>项目管理工具</th>
+            <th>https://maven.apache.org/</th>
+        </tr>
+    </table>
+
+
 #### 遇见的一些问题以及解决办法
 * “swagger2.6.0 and 2.7.0 can not work well with springmvc,
 > a work around is to rollback to springfox-swagger2 2.5.0 .
@@ -33,14 +89,7 @@
 > （1）外键对应的字段数据类型不一致,（2）设置外键时“删除时”设置为“SET NULL”,（3）两张表的存储引擎不一致
 * mybatis进行批量插入时，如果数据库内存在相同的数据，则更新不插入，如果没有，则插入数据。
 > 解决办法 数据库语句后面加入 ON DUPLICATE KEY UPDATE categoryId = VALUES(categoryId),同时MySQL中设置categoryId索引类型为Unique。约束唯一标识数据库表中的每一条记录，即在单表中不能用每条记录是唯一的（例如身份证就是唯一的），Unique(要求列唯一)和Primary Key(primary key = unique + not null 列唯一)约束均为列或列集合中提供了唯一性的保证，Primary Key是拥有自动定义的Unique约束，但是每个表中可以有多个Unique约束，但是只能有一个Primary Key约束。 
-#### 项目目标
-* 3/27---3/30 数据库设计，以及对应实体类，数据库映射表完成
-* 3/31---4/10 逻辑处理的实现
-* 4/11---4/20 前端页面的完善
-* 4/21---4/30 前后端进行整合
-* 5/01---5/10 项目部署以及发布
-#### 项目进度
-* 3/27 项目基本架构已实现，Springboot已与Shiro,Swagger2.进行整合.
+* SpringMVC多参数传参-未解决
 #### 拓展
 
 

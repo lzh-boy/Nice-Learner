@@ -38,4 +38,9 @@ public class RoleServiceImpl implements IRoleService {
     public void delete(Integer id) {
         roleMapper.delete(id);
     }
+
+    @Override
+    public void update(Role role) {
+        roleMapper.update(role);
+    }
 }

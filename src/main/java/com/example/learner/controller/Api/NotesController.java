@@ -55,7 +55,7 @@ public class NotesController {
         return ResultUtil.success();
     }
 
-    @PutMapping("/{notes}")
+    @PutMapping("/")
     @ResponseBody
     @ApiOperation(value = "更新一个日记",httpMethod = "PUT",response = Notes.class)
     private Object update(@ModelAttribute("notes") @Valid Notes notes, BindingResult bindingResult){

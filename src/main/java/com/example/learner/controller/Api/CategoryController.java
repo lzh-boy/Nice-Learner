@@ -52,7 +52,7 @@ public class CategoryController {
         return ResultUtil.success();
     }
     
-    @PutMapping("/{category}")
+    @PutMapping("/")
     @ResponseBody
     @ApiOperation(value = "更新一条分类信息",httpMethod = "POST",response = Category.class)
     public Object updateCategory(@ModelAttribute("category") @Valid Category category,BindingResult bindingResult) {

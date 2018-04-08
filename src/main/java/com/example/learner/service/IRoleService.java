@@ -3,6 +3,7 @@ package com.example.learner.service;
 
 import com.example.learner.bean.Role;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -31,6 +32,9 @@ public interface IRoleService {
      */
     void delete(Integer id);
 
-
-
+    /**
+     * 更新一位角色
+     * @param role
+     */
+    void update( Role role);
 }

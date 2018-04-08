@@ -3,7 +3,6 @@ package com.example.learner.bean;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.sql.Date;
 
 /**
  * Created by LiQian_Nice on 2018/3/31
